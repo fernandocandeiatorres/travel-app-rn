@@ -84,29 +84,40 @@ Um aplicativo móvel de planejamento de viagens inteligente desenvolvido com Rea
 
 ```
 travel-app/
-├── components/          # Componentes reutilizáveis
-│   ├── Button.tsx
-│   ├── Card.tsx
+├── components/          # Componentes reutilizáveis (modularizados)
+│   ├── Form/           # Componentes de formulário
+│   │   └── Input.tsx
+│   ├── Loading/        # Estados de carregamento
+│   │   └── LoadingSpinner.tsx
+│   ├── Trip/           # Componentes específicos de viagem
+│   │   ├── TripHeader.tsx
+│   │   └── HotelCard.tsx
+│   ├── Button.tsx      # Botão base reutilizável
+│   ├── Card.tsx        # Card base reutilizável
+│   └── index.ts        # Exports centralizados
+├── hooks/              # Custom hooks
+│   └── useForm.ts      # Hook para formulários
+├── constants/          # Cores, espaçamentos, configurações
 │   └── index.ts
-├── constants/           # Cores, espaçamentos, configurações
-│   └── index.ts
-├── navigation/          # Configuração de navegação
+├── navigation/         # Configuração de navegação
 │   └── AppNavigator.tsx
-├── screens/            # Telas do aplicativo
+├── screens/           # Telas do aplicativo
 │   ├── HomeScreen.tsx
-│   ├── LoginScreen.tsx
+│   ├── LoginScreen.tsx (+ versão refatorada)
 │   ├── RegisterScreen.tsx
 │   ├── TripFormScreen.tsx
 │   └── ResultsScreen.tsx
-├── services/           # APIs e serviços externos
+├── services/          # APIs e serviços externos
 │   └── api.ts
-├── types/              # Tipagens TypeScript
+├── types/             # Tipagens TypeScript
 │   └── index.ts
-├── utils/              # Funções utilitárias
+├── utils/             # Funções utilitárias
 │   ├── auth.ts
 │   ├── index.ts
 │   └── store.ts
-└── App.tsx             # Componente raiz
+├── docs/              # Documentação
+│   └── MODULAR_ARCHITECTURE.md
+└── App.tsx            # Componente raiz
 ```
 
 ## 🔧 Configuração do Backend
